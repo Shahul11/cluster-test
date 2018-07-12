@@ -1,5 +1,5 @@
-from selenium.webdriver.support import expected_conditions;
-from selenium.webdriver.support.wait import WebDriverWait;
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
 
 class LoginPage():
 
@@ -29,10 +29,15 @@ class LoginPage():
         except:
             return  None
 
-    def get_login_button(self):
+    def get_login_error_msg(self):
         try:
             return  self.driver.find_element_by_xpath("//span[contains(text(),'Please try again')]")
 
         except:
             return  None
 
+    def get_login_button(self):
+        try:
+            return self.driver.find_element_by_xpath("//div[text()='Login']")
+        except:
+            return  None
