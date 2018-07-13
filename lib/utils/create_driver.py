@@ -1,4 +1,5 @@
 import pytest
+import time
 from selenium.webdriver import  Chrome,Firefox
 
 def get_driver_instance():
@@ -18,7 +19,7 @@ def get_driver_instance():
     else:
         print('Invalid Environment Option')
     driver.maximize_window()
-
+   # time.sleep(10)
   #  driver.implicit_wait(30)
     driver.get("http://localhost/login.do")
 
