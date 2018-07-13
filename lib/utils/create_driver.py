@@ -7,10 +7,10 @@ def get_driver_instance():
 
 
     if env=='local':
-        if browser_type=='firefox':
-            driver=Firefox('/browsers_servers/geckodriver.exe')
-        elif browser_type=='chrome':
-            driver=Chrome('/browsers_servers/geckodriver.exe')
+        if browser_type =='firefox':
+            driver=Firefox('./browsers_servers/geckodriver.exe')
+        elif browser_type =='chrome':
+            driver=Chrome('./browsers_servers/chromedriver.exe')
         else:
             print("Invalid Browser Option")
     elif env=='remote':
@@ -18,7 +18,8 @@ def get_driver_instance():
     else:
         print('Invalid Environment Option')
     driver.maximize_window()
-    driver.implicit_wait(30)
+
+  #  driver.implicit_wait(30)
     driver.get("http://localhost/login.do")
 
     return  driver

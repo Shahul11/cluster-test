@@ -31,13 +31,14 @@ class LoginPage():
 
     def get_login_error_msg(self):
         try:
-            return  self.driver.find_element_by_xpath("//span[contains(text(),'Please try again')]")
+            return self.driver.find_element_by_xpath \
+                ("//span[contains(text(), 'Please try again')]")
 
         except:
             return  None
 
     def get_login_button(self):
         try:
-            return self.driver.find_element_by_xpath("//div[text()='Login']")
+            return self.driver.find_element_by_id('loginButton')
         except:
             return  None
